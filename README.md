@@ -48,4 +48,17 @@ by no means possible. The only worked model here is the FNN with different input
 needed. However, if too much information was given, the training is likely to overfit and deviate. Detailed reuslt could also be seen in excel file
 under the directory "MSSpartial" or the original paper. 
 
+#######################################################
+
+The third experiment was the Lorenz system, a chaotic model. The target is to show whether DL models could capture the dynamics ot the chaotic models.
+The interval was 0.01s. The model involved was FNN with different length of input, Transformer and LSTM. The evaluation was the MSE loss of prediction 
+given every 20,50,100,200 ground-truth points. If the input was only 1 point, FNN performed the best, similar to the result in Long-time Prediction 
+and short-time Prediction for noise-free modelling. However, when the input could be all previous points, LSTM performed even better than the FNN model. 
+Both these two models could generally capture the dynamics for 200 point prediction, usually greater than a cycle of changing the "steady side". 
+
+The fouth experiment was also the Lorenz system but with changed measurement interval. The measurement interval was 0.01,0.02,0.05,0.10s in this case.
+The model involved was FNN and LSTM, the best 2 in the previous experiment. With the increase of measurement interval, the model could first given more
+accurate prediction, but then both two models performed less accuracy. It seems that there is a best measurement interval for each model to balance the
+affect of catching the dynamics and reducing the error accumulation. 
+
 
