@@ -33,7 +33,19 @@ Prediction" directory. All trained model with different noise could also be seen
 Based on the results, the needed information (how much steps to the input) seems having large correlation to the noise level.
 When the noise-level is constant, there might be a best information sent to the Neural Network input.
 
-For the **interval-required modelling**, the target is to give confidence interval for prediction. The evaluation was based on how many
-points are within the confidence interval. Model involved here were Bayesian FNN and Bayesian LSTM. 
+For the **interval-required modelling**, the target is to give confidence interval for prediction. The model is assumed to have 10 % of noise
+The evaluation was based on how manypoints are within the confidence interval. Model involved here were Bayesian FNN and Bayesian LSTM. 
+The results was that Bayesian FNN performed better than Bayesian LSTM in terms of the balance between confidence interval and the accuracy.
+Increasing the step information in here seems has limited inference. However, both models could not achieve perfect fitting. In other word,
+achieving 90% accuracy when the confidence interval was twice larger than 10%; Nevertherless, the result was quite close to 90%. If the predicted
+steps reduced from 50 steps to 20 or 30 steps, the perfect accuracy might be achieved. 
+
+#######################################################
+
+The second experiment was also based on the mass spring system; however, the observed variable is only the position while the velocity is unkown.
+This might also be a condition in dynamical systems, but hte un-observed variables should be related to those observed; otherwise, modelling is
+by no means possible. The only worked model here is the FNN with different input-length. With the increase of the noise, more step information is
+needed. However, if too much information was given, the training is likely to overfit and deviate. Detailed reuslt could also be seen in excel file
+under the directory "MSSpartial" or the original paper. 
 
 
