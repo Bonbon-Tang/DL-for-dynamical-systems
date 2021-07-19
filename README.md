@@ -62,6 +62,6 @@ Both these two models could generally capture the dynamics for 200 point predict
 The fouth experiment was also the Lorenz system but with changed measurement interval. The measurement interval was 0.01,0.02,0.05,0.10s in this case.
 The model involved was FNN and LSTM, the best 2 in the previous experiment. With the increase of measurement interval, the model could first give more
 accurate prediction, but then both two models performed less accuracy. It seems that there is a best measurement interval for each model to balance the
-affect of catching the dynamics and reducing the error accumulation. 
+targets of catching the dynamics and reducing the error accumulation. 
 
 
